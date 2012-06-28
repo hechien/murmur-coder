@@ -20,6 +20,7 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
 end
 
 gem 'jquery-rails'
@@ -40,3 +41,4 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'pg'
+gem 'anjlab-bootstrap-rails', '>= 2.0', require: 'bootstrap-rails'
