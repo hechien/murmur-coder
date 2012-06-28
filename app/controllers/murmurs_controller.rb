@@ -32,11 +32,6 @@ class MurmursController < ApplicationController
     end
   end
 
-  # GET /murmurs/1/edit
-  def edit
-    @murmur = Murmur.find(params[:id])
-  end
-
   # POST /murmurs
   # POST /murmurs.json
   def create
@@ -53,31 +48,4 @@ class MurmursController < ApplicationController
     end
   end
 
-  # PUT /murmurs/1
-  # PUT /murmurs/1.json
-  def update
-    @murmur = Murmur.find(params[:id])
-
-    respond_to do |format|
-      if @murmur.update_attributes(params[:murmur])
-        format.html { redirect_to @murmur, notice: 'Murmur was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @murmur.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /murmurs/1
-  # DELETE /murmurs/1.json
-  def destroy
-    @murmur = Murmur.find(params[:id])
-    @murmur.destroy
-
-    respond_to do |format|
-      format.html { redirect_to murmurs_url }
-      format.json { head :no_content }
-    end
-  end
 end

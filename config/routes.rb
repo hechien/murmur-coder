@@ -1,6 +1,6 @@
 MurmurCoder::Application.routes.draw do
 
-  resources :murmurs, except: [:show]
+  resources :murmurs, only: [:index, :new, :create]
   match '/:generated_url', to: 'murmurs#show'
 
   # The priority is based upon order of creation:
