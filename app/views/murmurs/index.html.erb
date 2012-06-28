@@ -1,5 +1,11 @@
 <div class="container">
   <div class="row">
+    <header class="span6 offset3">
+      <h1>Murmur Coder</h1>
+      <small>寫Code也是需要發洩一下！</small>
+    </header>
+  </div>
+  <div class="row">
     <div class="span6 offset3">
       <%= render 'form' %>
       <blockquote>
@@ -7,14 +13,7 @@
         <small>寫這個App的人</small>
       </blockquote>
       <div id="murmurs-list">
-        <% @murmurs.each do |murmur| %>
-          <div class="row">
-            <blockquote class="<%= cycle("pull-right", "pull-left") %> span5">
-              <p><%= link_to murmur.content, murmur.generated_url %></p>
-              <small>我也不知道是誰發的</small>
-            </blockquote>
-          </div>
-        <% end %>
+        <%= render @murmurs %>
       </div>
     </div>
   </div>
