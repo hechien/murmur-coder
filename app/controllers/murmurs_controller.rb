@@ -15,10 +15,17 @@ class MurmursController < ApplicationController
   # POST /murmurs.json
   def create
     @murmur = Murmur.new(params[:murmur])
+    @murmurs = Murmur.order('id DESC').limit 20
 
     respond_to do |format|
       if @murmur.save
-        format.html { redirect_to root_path }
+        format.html do
+          if request.xhr?
+            render @murmurs, status: :created
+          else
+            redirect_to root_path
+          end
+        end
         format.json { render json: @murmur, status: :created, location: @murmur }
       else
         format.html { render action: "index" }
