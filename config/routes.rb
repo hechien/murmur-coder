@@ -1,6 +1,6 @@
 MurmurCoder::Application.routes.draw do
 
-  resources :murmurs, only: [:index, :new, :create]
+  resources :murmurs, only: [:index, :create]
   match '/:generated_url', to: 'murmurs#show'
   root to: 'murmurs#index'
 

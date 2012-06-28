@@ -12,14 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :generated_url %><br />
-    <%= f.text_field :generated_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <%= f.text_field :content, {placeholder: "請保持禮貌不要打髒話唷 ~ 啾咪 ^.<", class: "span4", required: true} %> <%= f.submit("送出去～") %>
   </div>
 <% end %>
