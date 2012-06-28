@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= yield %>
+  <div id="wrapper" class="<%= controller.controller_name %> <%= controller.action_name %>">
+    <%= yield %>
+  </div>
 
 <%= javascript_include_tag "application" %>
 </body>
