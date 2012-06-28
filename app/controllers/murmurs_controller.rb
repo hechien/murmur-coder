@@ -2,7 +2,7 @@ class MurmursController < ApplicationController
   # GET /murmurs
   # GET /murmurs.json
   def index
-    @murmurs = Murmur.all
+    @murmurs = Murmur.order('id DESC')
     @murmur  = Murmur.new
 
     respond_to do |format|
