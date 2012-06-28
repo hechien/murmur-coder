@@ -13,14 +13,7 @@
         <small>寫這個App的人</small>
       </blockquote>
       <div id="murmurs-list">
-        <% @murmurs.each do |murmur| %>
-          <div class="row">
-            <blockquote class="<%= cycle("pull-right", "pull-left") %> span5">
-              <p><%= link_to murmur.content, murmur.generated_url %></p>
-              <small>我也不知道是誰發的</small>
-            </blockquote>
-          </div>
-        <% end %>
+        <%= render @murmurs %>
       </div>
     </div>
   </div>
