@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @murmur.content %>
+</p>
+
+<p>
+  <b>Generated url:</b>
+  <%= @murmur.generated_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_murmur_path(@murmur) %> |
+<%= link_to 'Back', murmurs_path %>
