@@ -1,6 +1,8 @@
 class Murmur < ActiveRecord::Base
   attr_accessible :content, :generated_url
 
+  validates :content, presence: true
+
   before_save :generate_url
 
   private
