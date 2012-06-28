@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="span6 offset3">
-      <%= link_to "我也要Murmur", new_murmur_path %>
+      <%= render 'form' %>
       <div id="murmurs-list">
         <% @murmurs.each do |murmur| %>
           <article id="murmur-item-<%= murmur.id %>" class="murmur-item"><%= link_to murmur.content, murmur.generated_url %></article>
