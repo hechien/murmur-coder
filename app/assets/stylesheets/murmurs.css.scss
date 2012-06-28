@@ -4,6 +4,22 @@
 
   &.index{
 
+    form{
+
+      #murmur_content{
+        height: 80px;
+        font-size: 24pt;
+        margin: 20px;
+      }
+
+      input[type="submit"]{
+        height: 80px;
+        font-size: 24pt;
+        margin: 20px;
+        margin-left: -10px;
+      }
+    }
+
     .murmur-item{
 
       @include box-shadow(grey 2px 2px 10px);
