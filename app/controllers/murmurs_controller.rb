@@ -3,32 +3,11 @@ class MurmursController < ApplicationController
   # GET /murmurs.json
   def index
     @murmurs = Murmur.all
+    @murmur  = Murmur.new
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @murmurs }
-    end
-  end
-
-  # GET /murmurs/1
-  # GET /murmurs/1.json
-  def show
-    @murmur = Murmur.find_by_generated_url(params[:generated_url])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @murmur }
-    end
-  end
-
-  # GET /murmurs/new
-  # GET /murmurs/new.json
-  def new
-    @murmur = Murmur.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @murmur }
     end
   end
 
@@ -39,10 +18,10 @@ class MurmursController < ApplicationController
 
     respond_to do |format|
       if @murmur.save
-        format.html { redirect_to @murmur, notice: 'Murmur was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render json: @murmur, status: :created, location: @murmur }
       else
-        format.html { render action: "new" }
+        format.html { render action: "index" }
         format.json { render json: @murmur.errors, status: :unprocessable_entity }
       end
     end
