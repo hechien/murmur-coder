@@ -1,0 +1,23 @@
+@import "compass";
+
+.murmurs{
+
+  &.index{
+
+    .murmur-item{
+
+      @include box-shadow(grey 2px 2px 10px);
+      @include border-radius(25px);
+
+      border: 1px solid;
+      padding: 100px 25px;
+      margin: 20px 0;
+      font-size: 24pt;
+
+      &:hover{
+        background: lighten(#8c3, 3%);
+      }
+    }
+
+  }
+}
