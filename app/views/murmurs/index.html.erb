@@ -2,9 +2,18 @@
   <div class="row">
     <div class="span6 offset3">
       <%= render 'form' %>
+      <blockquote>
+        <p>寫Code不Murmur一下怎麼寫得下去？難道要寫在Comment裡？</p>
+        <small>寫這個App的人</small>
+      </blockquote>
       <div id="murmurs-list">
         <% @murmurs.each do |murmur| %>
-          <article id="murmur-item-<%= murmur.id %>" class="murmur-item"><%= link_to murmur.content, murmur.generated_url %></article>
+          <div class="row">
+            <blockquote class="<%= cycle("pull-right", "pull-left") %> span5">
+              <p><%= link_to murmur.content, murmur.generated_url %></p>
+              <small>我也不知道是誰發的</small>
+            </blockquote>
+          </div>
         <% end %>
       </div>
     </div>
